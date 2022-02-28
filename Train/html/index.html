@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Control</title>
+	<style>
+	  body {
+		  font-family: Sans-Serif;
+		  Color: #000088;
+		  width: 100%;
+	  }
+	</style>
+	<script src="app.js" type="application/javascript"></script>
+  </head>
+  <body>
+	<h1 id="title"></h1>
+	<div>
+	  <h2>Control</h2>
+	  <form id="control">
+		Direction: 
+		<input type="radio" name="dir" value="F" checked> Forward 
+		<input type="radio" name="dir" value="R"> Reverse<br>
+		Speed: <input type="range" name="speed" min="0" max="100"  oninput="this.nextElementSibling.value = this.value" value="50"><output>50</output><br>
+		Target tag:
+		<select name="rfid">
+		  <option value="">None</option>
+		  <option value="next">Next</option>
+		</select><br>
+		<input type="submit" value="Go">
+		<input type="submit" value="Stop">		
+	  </form>
+	</div>
+	<div>
+	  <h2>Config</h2>
+	  <form id="config">
+		Name: <input type="text" name="name" value=""><br>
+		Battery empty: <input type="range" name="batteryEmpty" oninput="this.nextElementSibling.value = this.value" min="0" max="1023"><output></output><br>
+		Battery full: <input type="range" name="batteryFull" oninput="this.nextElementSibling.value = this.value" min="0" max="1023"><output></output><br>
+		Motor min: <input type="range" name="motorMin" oninput="this.nextElementSibling.value = this.value" min="0" max="255"><output></output><br>
+		Motor max: <input type="range" name="motorMax" oninput="this.nextElementSibling.value = this.value" min="0" max="255"><output></output><br>
+		Active brake: 
+		<input type="radio" name="activeBrake" value="true" checked> On 
+		<input type="radio" name="activeBrake" value="false"> Off<br>
+		Brake time (ms): <input type="range" name="brakeTimeMS" oninput="this.nextElementSibling.value = this.value" min="0" max="2000"><output></output><br>
+		Beep on tag read: 
+		<input type="radio" name="beep" value="true" checked> On 
+		<input type="radio" name="beep" value="false"> Off<br>
+		Beep time (ms): <input type="range" name="beepMS" oninput="this.nextElementSibling.value = this.value" min="10" max="1000"><output></output><br>
+		Display raw control line values:  <br>
+		<input type="radio" name="displayRaw" value="true"> On 
+		<input type="radio" name="displayRaw" value="false" checked> Off<br>
+		Dynamically adjust motor driver to maintain output voltage to the motor as input battery voltage drops: <br>
+		<input type="radio" name="dynamicPower" value="true"> On 
+		<input type="radio" name="dynamicPower" value="false" checked> Off<br>
+		<table id="tags">
+		  <tr>
+			<th>Name</th>
+			<th>UID</th>
+		  </tr>
+		  <tr>
+			<td><input type="text" name="tagName" id="tagName0"></td>
+			<td><input type="text" name="tag" id="tag0"></td>
+		  </tr>
+		  <tr>
+			<td><input type="text" name="tagName" id="tagName1"></td>
+			<td><input type="text" name="tag" id="tag1"></td>
+		  </tr>
+		  <tr>
+			<td><input type="text" name="tagName" id="tagName2"></td>
+			<td><input type="text" name="tag" id="tag2"></td>
+		  </tr>
+		  <tr>
+			<td><input type="text" name="tagName" id="tagName3"></td>
+			<td><input type="text" name="tag" id="tag3"></td>
+		  </tr>
+		  <tr>
+			<td><input type="text" name="tagName" id="tagName4"></td>
+			<td><input type="text" name="tag" id="tag4"></td>
+		  </tr>
+		  <tr>
+			<td><input type="text" name="tagName" id="tagName5"></td>
+			<td><input type="text" name="tag" id="tag5"></td>
+		  </tr>
+		  <tr>
+			<td><input type="text" name="tagName" id="tagName6"></td>
+			<td><input type="text" name="tag" id="tag6"></td>
+		  </tr>
+		  <tr>
+			<td><input type="text" name="tagName" id="tagName7"></td>
+			<td><input type="text" name="tag" id="tag7"></td>
+		  </tr>
+		  <tr>
+			<td><input type="text" name="tagName" id="tagName8"></td>
+			<td><input type="text" name="tag" id="tag8"></td>
+		  </tr>
+		  <tr>
+			<td><input type="text" name="tagName" id="tagName9"></td>
+			<td><input type="text" name="tag" id="tag9"></td>
+		  </tr>
+		</table>
+		<input type="submit" value="Submit">
+	  </form>
+	</div>
+	<div>
+	  <pre id="response"></pre>
+	</div>
+  </body>
+</html>
