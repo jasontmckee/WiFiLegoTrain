@@ -11,7 +11,7 @@ A simple responsive UI is served from the train for control/config.
 
 ### REST API
 
-All POST calls should be in application/x-www-form-urlencoded format
+All POST calls should be in form-data format
 
 **`POST /api/control`**
 
